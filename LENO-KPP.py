@@ -12,7 +12,7 @@ num_points = sol.shape[-1]
 x = np.linspace(0, 1, num_points)
 p = 64
 M = 1000
-ntrain = sol.shape[0]
+ntrain = 100 
 beta = np.zeros([sol.shape[0],sol.shape[1],p])
 for i in range(p):
     basis = sol*np.sin((i+1)*np.pi*x)
@@ -28,6 +28,8 @@ class NonlinearNet(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(p, M),
             nn.ReLU(),
+            nn.Linear(M, p)
+	    nn.ReLU(),
             nn.Linear(M, p)
         )
 
