@@ -11,6 +11,8 @@ The workflow consists of three main steps:
 2. **Generate Dynamic Solutions**
    - Use Python scripts (`FEM_xx.py`) to compute the corresponding dynamic solutions using Finite Element Methods (FEM).
 
+   - For ADNI dataset, after collecting patients data,  use `gen_eigen_ADNI.py` to compute the eigenfunction, eigenvalue and the coefficient.  
+
 3. **Run Experiments**
    - Use Python scripts (`LENO_xx.py`) to train and test the Laplacian-Eigenfunction Based Neural Operator on the generated data.
 
